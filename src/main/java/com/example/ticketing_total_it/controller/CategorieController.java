@@ -20,7 +20,7 @@ import com.example.ticketing_total_it.repository.CategorieRepository;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:8085", allowCredentials = "true")
+@CrossOrigin(origins = "https://css-two-black.vercel.app", allowCredentials = "true")
 public class CategorieController {
 
     @Autowired

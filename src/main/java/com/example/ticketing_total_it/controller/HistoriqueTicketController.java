@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/historique_tickets")
-@CrossOrigin(origins = "http://localhost:8085", allowCredentials = "true")
+@CrossOrigin(origins = "https://css-two-black.vercel.app", allowCredentials = "true")
 public class HistoriqueTicketController {
 
     @Autowired
