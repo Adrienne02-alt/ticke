@@ -17,7 +17,7 @@ import java.util.OptionalDouble;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "https://css-two-black.vercel.app", allowCredentials = "true")
+@CrossOrigin(origins = "https://css-28b4.vercel.app", allowCredentials = "true")
 public class StatistiquesController {
 
     @Autowired
