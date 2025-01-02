@@ -1,0 +1,14 @@
+# Utiliser l'image de base OpenJDK 22
+FROM openjdk:17-jdk-slim
+
+# Définir le répertoire de travail
+WORKDIR /app
+
+# Copier le fichier JAR dans le conteneur
+COPY target/*.jar app.jar
+
+# Exposer le port que l'application utilise
+EXPOSE 8080
+
+# Commande pour exécuter l'application
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
