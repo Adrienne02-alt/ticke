@@ -40,7 +40,7 @@ public class RapportController {
     @GetMapping("/rapports/technicien")
     public List<Rapport> getRapportsParTechnicien(@RequestParam Long technicienId) {
         // Récupère les rapports créés par le technicien
-        return rapportRepository.findByCreateur(technicienId);
+        return rapportRepository.findByCreateurId(technicienId);
     }
 
     // Mettre à jour un rapport
