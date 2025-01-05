@@ -17,7 +17,7 @@ public class Notation {
     private Ticket ticket;
 
     @ManyToOne
-    @JoinColumn(name = "technicien_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_notation_technicien"))
+    @JoinColumn(name = "technicien_id", referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_notation_technicien"))
     private Utilisateur technicien;
 
     @Column(name = "note", nullable = false)

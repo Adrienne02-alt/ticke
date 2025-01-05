@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/historique_tickets")
-@CrossOrigin(origins = "https://css-28b4.vercel.app", allowCredentials = "true")
+@CrossOrigin(origins = "https://css-28b4.vercel.app/", allowCredentials = "true")
 public class HistoriqueTicketController {
 
     @Autowired
@@ -27,12 +27,6 @@ public class HistoriqueTicketController {
     @GetMapping("/all")
     public List<HistoriqueTicket> getAllHistorique() {
         return historiqueTicketRepository.findAll();
-    }
-
-    // Récupérer l'historique d'un ticket spécifique
-    @GetMapping("/byTicket/{ticketId}")
-    public List<HistoriqueTicket> getHistoriqueByTicket(@PathVariable Long ticketId) {
-        return historiqueTicketRepository.findByTicketId(ticketId);
     }
 
     // Récupérer l'historique d'un utilisateur spécifique

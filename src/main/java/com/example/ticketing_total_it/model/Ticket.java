@@ -12,10 +12,10 @@ public class Ticket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "titre", length = 200, nullable = false)
+    @Column(name = "titre", length = 200)
     private String titre;
 
-    @Column(name = "description", nullable = false)
+    @Column(name = "description")
     private String description;
 
     @Column(name = "categorie", length = 100)
@@ -25,7 +25,7 @@ public class Ticket {
     private Integer pourcentage;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "priorite", length = 50, nullable = false)
+    @Column(name = "priorite", length = 50)
     private Priorite priorite;
 
     @Enumerated(EnumType.STRING)
@@ -45,7 +45,7 @@ public class Ticket {
     private LocalDateTime deadline;
 
     @ManyToOne
-    @JoinColumn(name = "employe_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_ticket_employe"))
+    @JoinColumn(name = "employe_id", referencedColumnName = "id", foreignKey = @ForeignKey(name = "fk_ticket_employe"))
     private Utilisateur employe;
 
     @ManyToOne

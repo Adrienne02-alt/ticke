@@ -19,8 +19,8 @@ import com.example.ticketing_total_it.model.Categorie;
 import com.example.ticketing_total_it.repository.CategorieRepository;
 
 @RestController
+@CrossOrigin(origins = "https://css-28b4.vercel.app/", allowCredentials = "true")
 @RequestMapping("/api")
-@CrossOrigin(origins = "https://css-28b4.vercel.app", allowCredentials = "true")
 public class CategorieController {
 
     @Autowired

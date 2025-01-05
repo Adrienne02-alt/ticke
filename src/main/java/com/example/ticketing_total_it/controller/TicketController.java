@@ -3,6 +3,7 @@ package com.example.ticketing_total_it.controller;
 import com.example.ticketing_total_it.model.Ticket;
 import com.example.ticketing_total_it.repository.TicketRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/tickets")
-@CrossOrigin(origins = "https://css-28b4.vercel.app", allowCredentials = "true")
+@CrossOrigin(origins = "https://css-28b4.vercel.app/", allowCredentials = "true")
 public class TicketController {
 
     @Autowired
@@ -49,6 +50,8 @@ public class TicketController {
                 ticket.setStatut(updatedTicket.getStatut());
                 ticket.setEmploye(updatedTicket.getEmploye());
                 ticket.setTechnicien(updatedTicket.getTechnicien());
+                ticket.setDeadline(updatedTicket.getDeadline());
+                ticket.setPourcentage(updatedTicket.getPourcentage());
                 ticket.setDateMiseAJour(updatedTicket.getDateMiseAJour());
                 Ticket savedTicket = ticketRepository.save(ticket);
                 return ResponseEntity.ok(savedTicket);
@@ -73,12 +76,13 @@ public class TicketController {
 
     // Supprimer un ticket par son ID
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Void> deleteTicket(@PathVariable Long id) {
+    public ResponseEntity<String> deleteTicket(@PathVariable Long id) {
         return ticketRepository.findById(id)
             .map(ticket -> {
                 ticketRepository.delete(ticket);
-                return ResponseEntity.noContent().<Void>build();
+                return ResponseEntity.ok("Ticket supprimé avec succès.");
             })
-            .orElseGet(() -> ResponseEntity.notFound().build());
+            .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body("Ticket introuvable."));
     }
+
 }

@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/notations")
-@CrossOrigin(origins = "https://css-28b4.vercel.app", allowCredentials = "true")
+@CrossOrigin(origins = "https://css-28b4.vercel.app/", allowCredentials = "true")
 public class NotationController {
 
     @Autowired
@@ -24,10 +24,10 @@ public class NotationController {
     }
 
     // Récupérer toutes les notations
-    @GetMapping("/all")
-    public List<Notation> getAllNotations() {
-        return notationRepository.findAll();
-    }
+        @GetMapping("/all")
+        public List<Notation> getAllNotations() {
+            return notationRepository.findAll();
+        }
 
     // Récupérer les notations par ticket
     @GetMapping("/byTicket/{ticketId}")

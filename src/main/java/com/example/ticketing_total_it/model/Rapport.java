@@ -12,9 +12,6 @@ public class Rapport {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "titre", length = 255, nullable = false)
-    private String titre;
-
     @Column(name = "contenu")
     private String contenu;
 
@@ -46,13 +43,6 @@ public class Rapport {
         this.id = id;
     }
 
-    public String getTitre() {
-        return titre;
-    }
-
-    public void setTitre(String titre) {
-        this.titre = titre;
-    }
 
     public String getContenu() {
         return contenu;

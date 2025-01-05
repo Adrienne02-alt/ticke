@@ -12,9 +12,8 @@ public class HistoriqueTicket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "ticket_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_historique_ticket"))
-    private Ticket ticket;
+    @Column(name="ticket_id")
+    private int ticket;
 
     @Column(name = "action", length = 255, nullable = false)
     private String action;
@@ -35,11 +34,11 @@ public class HistoriqueTicket {
         this.id = id;
     }
 
-    public Ticket getTicket() {
+    public int getTicket() {
         return ticket;
     }
 
-    public void setTicket(Ticket ticket) {
+    public void setTicket(int ticket) {
         this.ticket = ticket;
     }
 

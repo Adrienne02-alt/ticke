@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "https://css-28b4.vercel.app", allowCredentials = "true")
+@CrossOrigin(origins = "https://css-28b4.vercel.app/", allowCredentials = "true")
 public class RapportController {
 
     @Autowired
@@ -48,7 +48,6 @@ public class RapportController {
     public ResponseEntity<Rapport> updateRapport(@PathVariable Long id, @RequestBody Rapport updatedRapport) {
         return rapportRepository.findById(id)
             .map(rapport -> {
-                rapport.setTitre(updatedRapport.getTitre());
                 rapport.setContenu(updatedRapport.getContenu());
                 rapport.setTicket(updatedRapport.getTicket());
                 rapport.setCreateur(updatedRapport.getCreateur());

@@ -6,9 +6,6 @@ import java.util.List;
 
 public interface HistoriqueTicketRepository extends JpaRepository<HistoriqueTicket, Long> {
 
-    // Trouver les historiques d'un ticket
-    List<HistoriqueTicket> findByTicketId(Long ticketId);
-
     // Trouver les historiques d'un utilisateur
     List<HistoriqueTicket> findByUtilisateurId(Long utilisateurId);
 }

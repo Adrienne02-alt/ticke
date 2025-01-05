@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>ticketing_total_it</artifactId>
+    <artifactId>stock</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ticketing_total_it</name>
+    <name>stock</name>
     <description>Ticketing gestion</description>
     <url/>
     <licenses>
